@@ -46,6 +46,12 @@ void function() {
 }
 ```
 
+**悬停效果演示**：
+
+![悬停注释演示](./images/Code_ebOSzqf6zb.gif)
+
+*动画展示了当鼠标悬停在 `ex1` 变量上时，显示来自 header.h 文件中的原始注释、类型和定义位置信息。*
+
 ## Requirements
 
 - VS Code 1.99.0 or higher
