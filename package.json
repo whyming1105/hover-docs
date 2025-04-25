@@ -1,8 +1,10 @@
 {
   "name": "hover-docs",
   "displayName": "hover-docs",
-  "description": "Enhanced hover documentation for C/C++ variables",
-  "version": "0.0.1",
+  "description": "增强的C/C++变量悬停文档，支持跨文件解析",
+  "icon": "LOGO.png",
+  "publisher": "MoMingQiMiao",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -19,8 +21,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "hover-docs.helloWorld",
-        "title": "Hello World"
+        "command": "hover-docs.showInfo",
+        "title": "显示C/C++悬停文档信息"
       }
     ]
   },

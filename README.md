@@ -1,71 +1,77 @@
-# hover-docs README
+# hover-docs
 
-This is the README for your extension "hover-docs". After writing up a brief description, we recommend including the following sections.
+Enhanced hover documentation for C/C++ variables
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Detailed hover documentation for C/C++ code
+- Display variable types and definition locations
+- Supports C and C++ header files (.h, .hpp)
+- ** NEW **: Support hover comment display for cross-file parsing
+  - Comments can also be displayed when using struct members defined in.h files in.c files
+  - Automatically searches the workspace for header files
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Install from VS Code Marketplace
+2. Reload VS Code window
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
+
+Hover the mouse over any variable in C/C++ code to view the enhanced documentation.
+
+### Cross-file hover comment
+
+New feature supports variable display comments defined in different files:
+
+1. When using struct members defined in.h files in.c files, hovering can also display comments in the original code
+2. The plug-in automatically searches the workspace for the included header file to find the original definition of the variable
+3. The hover prompt displays the definition file path, type, and comment for the variable
+
+**Example**：
+
+```c
+// Structure defined in header.h file
+struct myStruct {
+    int ex1;        // Examples 1
+    float ex2;      // Examples 2
+    char ex3;       // Examples 3
+} mst;
+
+// Used in main.c file
+void function() {
+    mst.ex1 = 7;    // Hovering will display the original annotation "Example 1"
+    mst.ex2 = 5.5;  // Hovering will display the original annotation "Example 2"
+    mst.ex3 = 'A';  // Hovering will display the original annotation "Example 3"
+}
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- VS Code 1.99.0 or higher
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+No additional settings required.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+None currently.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.3
 
-### 1.0.0
+- Add cross-file hover comment
+- Supports automatic search for included header files in the workspace
+- Optimize hover display format
 
-Initial release of ...
+### 0.0.2
 
-### 1.0.1
+- Fixed some bugs.
+- Improved variable type recognition
 
-Fixed issue #.
+### 0.0.1
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- original version was
+- Basic C/C++ variable hovering functionality
