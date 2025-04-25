@@ -4,12 +4,12 @@ Enhanced hover documentation for C/C++ variables
 
 ## Features
 
-- 为C/C++代码提供详细的悬停文档
-- 显示变量类型和定义位置
-- 支持C和C++头文件(.h, .hpp)
-- **新功能**: 支持跨文件解析的悬停注释显示
-  - 当在.c文件中使用.h文件中定义的结构体成员时，也能显示注释
-  - 自动在工作区中搜索包含的头文件
+- Detailed hover documentation for C/C++ code
+- Display variable types and definition locations
+- Supports C and C++ header files (.h, .hpp)
+- ** NEW **: Support hover comment display for cross-file parsing
+  - Comments can also be displayed when using struct members defined in.h files in.c files
+  - Automatically searches the workspace for header files
 
 ## Installation
 
@@ -18,31 +18,31 @@ Enhanced hover documentation for C/C++ variables
 
 ## Usage
 
-只需将鼠标悬停在C/C++代码中的任何变量上，即可查看增强的文档。
+Hover the mouse over any variable in C/C++ code to view the enhanced documentation.
 
-### 跨文件悬停注释
+### Cross-file hover comment
 
-新功能支持在不同文件中定义的变量显示注释：
+New feature supports variable display comments defined in different files:
 
-1. 当在.c文件中使用.h文件中定义的结构体成员时，悬停也能显示原始代码中的注释
-2. 插件会自动在工作区中搜索包含的头文件，找到变量的原始定义
-3. 悬停提示会显示变量的定义文件路径、类型和注释
+1. When using struct members defined in.h files in.c files, hovering can also display comments in the original code
+2. The plug-in automatically searches the workspace for the included header file to find the original definition of the variable
+3. The hover prompt displays the definition file path, type, and comment for the variable
 
-**示例**：
+**Example**：
 
 ```c
-// header.h 文件中定义结构体
+// Structure defined in header.h file
 struct myStruct {
-    int ex1;        // 示例1
-    float ex2;      // 示例2
-    char ex3;       // 示例3
+    int ex1;        // Examples 1
+    float ex2;      // Examples 2
+    char ex3;       // Examples 3
 } mst;
 
-// main.c 文件中使用
+// Used in main.c file
 void function() {
-    mst.ex1 = 7;    // 悬停时会显示原始注释 “示例1”
-    mst.ex2 = 5.5;  // 悬停时会显示原始注释 “示例2”
-    mst.ex3 = 'A';  // 悬停时会显示原始注释 “示例3”
+    mst.ex1 = 7;    // Hovering will display the original annotation "Example 1"
+    mst.ex2 = 5.5;  // Hovering will display the original annotation "Example 2"
+    mst.ex3 = 'A';  // Hovering will display the original annotation "Example 3"
 }
 ```
 
@@ -62,16 +62,16 @@ None currently.
 
 ### 0.0.3
 
-- 添加跨文件悬停注释功能
-- 支持在工作区中自动搜索包含的头文件
-- 优化悬停显示格式
+- Add cross-file hover comment
+- Supports automatic search for included header files in the workspace
+- Optimize hover display format
 
 ### 0.0.2
 
-- 修复了一些bug
-- 改进了变量类型识别
+- Fixed some bugs.
+- Improved variable type recognition
 
 ### 0.0.1
 
-- 初始版本发布
-- 基本的C/C++变量悬停功能
+- original version was
+- Basic C/C++ variable hovering functionality
